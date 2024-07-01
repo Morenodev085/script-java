@@ -1,37 +1,35 @@
 <!DOCTYPE html>
-<html lang="Pt-Br">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto Ebac JAva</title>
-    <link rel="stylesheet" href="./main.css">
+    <title>Validação de Números</title>
+    <style>
+        .mensagem {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .mensagem.positiva {
+            color: green;
+        }
+        .mensagem.negativa {
+            color: red;
+        }
+    </style>
 </head>
 <body>
-    <div class="conteiner">
-        <section class="header">
-            <h2>Exercicio Ebac</h2>
-        </section>
-        <form id="form" class="form">
-            <div class="form-content">
-                <label for="Numero">Primeiro numero</label>
-                <input type="number" name="Numero A" id="Primeiro-numero " placeholder="Digite o primeiro numero" >
-                <a>Mensagem de erro....</a>
-            </div>
-                </section>
-                <form id="form" class="form">
-                    <div class="form-content">
-                        <label for="Numero">segundo numero</label>
-                        <input type="number" name="Numero A" id="Segundo-numero " placeholder="Digite o segundo numero" >
-                        <a>Mensagem de erro....</a>
-                    </div>
-        
-        <button type="submit">Submeter</button>
+    <h1>Validação de Números</h1>
+    <form id="formulario">
+        <label for="campoA">Campo A:</label>
+        <input type="number" id="campoA" name="campoA" required>
+        <br><br>
+        <label for="campoB">Campo B:</label>
+        <input type="number" id="campoB" name="campoB" required>
+        <br><br>
+        <input type="submit" value="Verificar">
+    </form>
+    <div id="mensagemResultado" class="mensagem"></div>
 
-
-        </form>
-
-
-    </div>
-    <script src="./main.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
