@@ -1,32 +1,20 @@
+document.getElementById('formulario').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita o envio padrão do formulário
 
-const form = document.getElementById("form");
-const numeroa =  document.getElementById("Primeiro nome");
-const numerob =  document.getElementById("Segundo nome");
+    // Captura dos valores dos campos A e B
+    let valorA = parseInt(document.getElementById('campoA').value);
+    let valorB = parseInt(document.getElementById('campoB').value);
 
-form.addEventListener("submit", (event) =>{
-    event.preventDefault();
-
-    checkInputNumeroA
-})
-
-function checkInputNumeroA(){
-    const numeroaValue = numeroa.value
-
-    if(numeroavalue > numerob){
-        errorInput(numeroa, "O primeiro numero tem que ser menor que o segundo ")
+    // Verificação se B é maior que A
+    if (valorB > valorA) {
+        exibirMensagem('Formulário válido!', 'positiva');
+    } else {
+        exibirMensagem('Formulário inválido! O número B deve ser maior que o número A.', 'negativa');
     }
-    else{
-        const formItem = username.parentElement;
-        formItem.classlist = "form-content"
-    }
-}
+});
 
-
-function errorInput (input, message){
-    const formItem = input.parentElement
-    const textMessage = formItem.querySelector("a")
-
-    textMessage.innerText = massage;
-
-    formItem.className = "form-content error"
+function exibirMensagem(mensagem, tipo) {
+    let divMensagem = document.getElementById('mensagemResultado');
+    divMensagem.textContent = mensagem;
+    divMensagem.className = 'mensagem ' + tipo;
 }
